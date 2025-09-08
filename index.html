@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EF Earn-Your-Desk — Free Desk Residency</title>
+    <meta name="description" content="Free desk at Station F for builders who ship. Start any Monday, keep your desk by building something genuinely impressive.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="EF Earn-Your-Desk — Free Desk Residency">
+    <meta property="og:description" content="Free desk at Station F for builders who ship.">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="EF Earn-Your-Desk — Free Desk Residency">
+    <meta name="twitter:description" content="Free desk at Station F for builders who ship.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        @font-face {
+            font-family: 'PS Times Display';
+            src: url('PSTimes-Display.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Neue Haas Grotesk Display Pro';
+            src: url('NHaasGroteskDSPro-65Md.otf') format('opentype');
+            font-weight: 500;
+            font-style: normal;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --text-primary: #ffffff;
+            --text-muted: #a1a1aa;
+            --accent-purple: #8b5cf6;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'PS Times Display', serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 0;
+            position: relative;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: 
+                url('Brody-Whiplash.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: grayscale(100%) brightness(0.6) contrast(1.1);
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.4);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: clamp(5rem, 16vw, 8rem);
+            font-weight: 400;
+            margin-bottom: 0rem;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(4rem, 10vw, 4.8rem);
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            margin-top: -1rem;
+            font-weight: 500;
+            font-family: 'PS Times Display', serif;
+            max-width: 500px;
+        }
+
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.875rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            min-width: 140px;
+            background: var(--text-primary);
+            color: var(--bg-primary);
+            border: 1px solid var(--text-primary);
+            font-family: 'PS Times Display', serif;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            background: transparent;
+            color: var(--text-primary);
+        }
+
+        .btn:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3);
+        }
+
+        /* Section */
+        .section {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 6rem auto;
+            padding: 6rem 2rem 0 2rem;
+        }
+
+        .section p {
+            font-size: 2rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-family: 'PS Times Display', serif;
+        }
+
+        /* Statement CTA */
+        .statement-cta {
+            font-size: clamp(1.875rem, 7.5vw, 3rem);
+            font-weight: 600;
+            color: var(--text-primary);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin: 3rem auto;
+            font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+            text-decoration: none;
+            display: block;
+        }
+
+        .statement-cta:hover {
+            color: var(--accent-purple);
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            .btn:hover {
+                transform: none;
+            }
+            
+            .statement-cta:hover {
+                transform: none;
+            }
+            
+            .logo-link:hover {
+                transform: none;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .hero {
+                height: 100vh;
+                padding: 2rem 0;
+            }
+            
+            .section {
+                margin: 0 auto 4rem auto;
+                padding: 4rem 1.5rem 0 1.5rem;
+            }
+            
+            .powered-by-section {
+                margin: 4rem auto 2rem auto;
+            }
+            
+            .logos-container {
+                gap: 2rem;
+            }
+            
+            .logo {
+                height: 17.5px;
+            }
+        }
+
+        /* Powered By Section */
+        .powered-by-section {
+            text-align: center;
+            margin: 6rem auto 4rem auto;
+            max-width: 600px;
+        }
+
+        .powered-by-text {
+            font-size: 1.6rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-family: 'PS Times Display', serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .logos-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-link {
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .logo-link:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1) hue-rotate(10deg);
+        }
+
+        .logo {
+            height: 20px;
+            width: auto;
+            filter: brightness(0) invert(1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .logo:hover {
+            filter: brightness(0) invert(1) sepia(1) hue-rotate(250deg) saturate(2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Earn your desk.</h1>
+            <p class="subtitle">Public Progress.</p>
+            <div class="cta-buttons">
+                <a href="https://luma.com/eyd" class="btn" target="_blank" rel="noopener">Apply</a>
+            </div>
+        </div>
+        
+        <!-- Section -->
+        <div class="section">
+            <p>Our founders are already in SF, so we have space at Station F for builders who ship.</p>
+            <p>You can start any Monday (rolling), you'll have two weeks to build something genuinely impressive and present it.</p>
+            <p>We review progress every two weeks, if you're meeting the bar, you keep your desk, if not, we'll reallocate it to meet strong demand from other talented teams.</p>
+        </div>
+        
+        <!-- Statement CTA -->
+        <a href="https://luma.com/eyd" class="statement-cta" target="_blank" rel="noopener">Earn your desk.</a>
+        
+        <!-- Powered By Section -->
+        <div class="powered-by-section">
+            <div class="powered-by-text">Powered by</div>
+            <div class="logos-container">
+                <a href="https://www.joinef.com/" class="logo-link" target="_blank" rel="noopener">
+                    <img src="EsF_logo_1_line_white_RGB.png" alt="Entrepreneurs First" class="logo">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Minimal JavaScript for analytics and interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track button clicks
+            const buttons = document.querySelectorAll('.btn, .statement-cta');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Analytics tracking placeholder
+                    console.log('Button clicked:', this.textContent.trim());
+                });
+            });
+        });
+    </script>
+</body>
+</html>
